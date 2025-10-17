@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рязанская Ирина - Frontend-разработчик</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+
+      /* page */
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* header */
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+      }
+
+      .header__content {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .header__title {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      .header__subtitle {
+        font-size: 1.1em;
+        opacity: 0.95;
+      }
+
+      .header__info-text {
+        font-size: 1.1em;
+        opacity: 0.95;
+      }
+
+      /* contact */
+      .contact {
+        margin-top: 15px;
+      }
+
+      .contact__link {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 15px;
+        margin-top: 5px;
+      }
+
+      .contact__link:hover {
+        text-decoration: underline;
+      }
+
+      /* main */
+      .main {
+        padding: 40px;
+      }
+
+      /* section */
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .section__title {
+        color: #667eea;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+      }
+
+      .section__text {
+        margin-bottom: 15px;
+      }
+
+      /* job */
+      .job {
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-left: 4px solid #667eea;
+        border-radius: 4px;
+      }
+
+      .job__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+      }
+
+      .job__info {
+        flex: 1;
+      }
+
+      .job__title {
+        color: #333;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+      }
+
+      .job__company {
+        color: #666;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+      }
+
+      .job__period {
+        color: #666;
+        font-style: italic;
+        text-align: right;
+      }
+
+      .job__duration {
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      .job__list {
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+
+      .job__list-item {
+        margin-bottom: 8px;
+      }
+
+      /* project */
+      .project {
+        margin-bottom: 25px;
+        padding-left: 15px;
+      }
+
+      .project__title {
+        color: #764ba2;
+        margin-bottom: 8px;
+        font-size: 1.1em;
+      }
+
+      .project__tasks-label {
+        font-weight: bold;
+      }
+
+      .project__list {
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+
+      .project__list-item {
+        margin-bottom: 8px;
+      }
+
+      .project__repo-label {
+        font-weight: bold;
+      }
+
+      .project__repo-block {
+        margin-top: 10px;
+      }
+
+      /* tech-stack */
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .tech-stack__item {
+        background-color: #667eea;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 0.85em;
+      }
+
+      /* skills */
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skills__item {
+        background-color: #e8eaf6;
+        color: #667eea;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+
+      /* info-grid */
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .info-grid__item {
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+      }
+
+      .info-grid__label {
+        color: #667eea;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* education */
+      .education {
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .education__year {
+        color: #667eea;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      .education__title {
+        color: #333;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+      }
+
+      .education__department {
+        margin-bottom: 5px;
+      }
+
+      .education__specialty {
+        margin-bottom: 5px;
+      }
+
+      .education__specialty-label {
+        font-weight: bold;
+      }
+
+      .education__location {
+        font-style: italic;
+      }
+
+      .education__subtitle {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 1.3em;
+      }
+
+      /* link */
+      .link {
+        color: #667eea;
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .link:hover {
+        text-decoration: underline;
+      }
+
+      /* footer */
+      .footer {
+        background-color: #f0f0f0;
+        padding: 20px 40px;
+        text-align: center;
+        color: #666;
+        font-size: 0.9em;
+      }
+
+      /* responsive */
+      @media (max-width: 768px) {
+        .header__content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .header__title {
+          font-size: 2em;
+        }
+
+        .main {
+          padding: 20px;
+        }
+
+        .job__header {
+          flex-direction: column;
+        }
+
+        .job__period {
+          text-align: left;
+          margin-top: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__content">
+          <div class="header__info">
+            <h1 class="header__title">Рязанская Ирина</h1>
+            <p class="header__subtitle">Frontend-разработчик</p>
+            <p class="header__info-text">Женщина, 29 лет, родилась 26 мая 1996</p>
+            <div class="contact">
+              <a href="tel:+79122790368" class="contact__link">📞 +7 (912) 279-03-68</a>
+              <a href="https://t.me/IrinaRyazanskaya" target="_blank" class="contact__link"
+                >💬 @IrinaRyazanskaya</a
+              >
+              <a href="mailto:ryazanskaya.irina@yandex.ru" class="contact__link"
+                >✉️ ryazanskaya.irina@yandex.ru</a
+              >
+              <a href="https://github.com/IrinaRyazanskaya" target="_blank" class="contact__link"
+                >🔗 GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <h2 class="section__title">👤 Обо мне</h2>
+          <p class="section__text">
+            Я начинающий фронтенд-разработчик, прошла обучение на курсах Яндекс Практикума и HTML
+            Academy. Умею верстать адаптивные интерфейсы. Создаю SPA на React с использованием
+            JavaScript и TypeScript. Знакома с Redux, React Router, Next.js, Git, Webpack и
+            Storybook. Работаю с макетами в Figma. Люблю учиться новому и хочу получить опыт на
+            реальных проектах и поработать в команде.
+          </p>
+          <p class="section__text">
+            Регулярно читаю Doka и статьи из хаба JavaScript на Habr, смотрю доклады на
+            YouTube-каналах HolyJS и Яндекс для фронтенд-разработчиков, слушаю подкаст Podlodka и
+            Weekend Talk.
+          </p>
+          <p class="section__text">
+            Выбрала фронтенд, потому что мне интересно делать интерфейсы удобными и понятными.
+            Вдохновляет возможность быстро видеть результат и влиять на пользовательский опыт.
+          </p>
+          <p class="section__text">
+            Ранее работала менеджером по проектам в строительстве. Опыт управления проектами,
+            коммуникации с командой и соблюдения сроков помогает мне в организации своей работы и
+            взаимодействии в команде.
+          </p>
+          <p class="section__text">
+            В свободное время занимаюсь творчеством, люблю вязать и делать макияж, хожу в спортзал и
+            занимаюсь вокалом, по праздникам пеку торты.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section__title">💼 Опыт работы (2 года 8 месяцев)</h2>
+
+          <article class="job">
+            <div class="job__header">
+              <div class="job__info">
+                <h3 class="job__title">Frontend-разработчик</h3>
+                <p class="job__company">Мои проекты</p>
+              </div>
+              <div class="job__period">
+                Январь 2021 — Декабрь 2022<br />
+                <span class="job__duration">2 года</span>
+              </div>
+            </div>
+
+            <div class="project">
+              <h4 class="project__title">Сайт для компании "УралТехДеталь"</h4>
+              <p class="project__tasks-label">Задачи:</p>
+              <ul class="project__list">
+                <li class="project__list-item">Реализовала адаптивную вёрстку</li>
+                <li class="project__list-item">Сверстала компоненты сайта с помощью React</li>
+                <li class="project__list-item">Настроила роутинг между страницами</li>
+                <li class="project__list-item">Реализовала форму отправки данных</li>
+              </ul>
+              <div class="tech-stack">
+                <span class="tech-stack__item">HTML</span>
+                <span class="tech-stack__item">CSS</span>
+                <span class="tech-stack__item">JavaScript</span>
+                <span class="tech-stack__item">React</span>
+                <span class="tech-stack__item">React Router</span>
+                <span class="tech-stack__item">Create React App</span>
+              </div>
+              <p class="project__repo-block">
+                <span class="project__repo-label">Репозиторий:</span>
+                <a
+                  href="https://github.com/IrinaRyazanskaya/utd-frontend"
+                  target="_blank"
+                  class="link"
+                >
+                  github.com/IrinaRyazanskaya/utd-frontend
+                </a>
+              </p>
+            </div>
+
+            <div class="project">
+              <h4 class="project__title">Лэндинг для диджитал-агентства "Blancy"</h4>
+              <p class="project__tasks-label">Задачи:</p>
+              <ul class="project__list">
+                <li class="project__list-item">
+                  Реализовала адаптивную вёрстку по макету с использованием Next.js
+                </li>
+                <li class="project__list-item">Сверстала компоненты сайта с помощью React</li>
+              </ul>
+              <div class="tech-stack">
+                <span class="tech-stack__item">HTML</span>
+                <span class="tech-stack__item">CSS Modules</span>
+                <span class="tech-stack__item">React</span>
+                <span class="tech-stack__item">Next.js</span>
+              </div>
+              <p class="project__repo-block">
+                <span class="project__repo-label">Репозиторий:</span>
+                <a
+                  href="https://github.com/IrinaRyazanskaya/blancy-frontend"
+                  target="_blank"
+                  class="link"
+                >
+                  github.com/IrinaRyazanskaya/blancy-frontend
+                </a>
+              </p>
+            </div>
+
+            <div class="project">
+              <h4 class="project__title">
+                Учебное веб-приложение для оформления заказов в бургерной
+              </h4>
+              <p class="project__tasks-label">Задачи:</p>
+              <ul class="project__list">
+                <li class="project__list-item">
+                  Реализовала конструктор ингредиентов и форму заказов
+                </li>
+                <li class="project__list-item">
+                  Реализовала авторизацию и регистрацию, личный кабинет с историей заказов
+                </li>
+                <li class="project__list-item">
+                  Наладила взаимодействие с бэкендом через HTTP API
+                </li>
+              </ul>
+              <div class="tech-stack">
+                <span class="tech-stack__item">HTML</span>
+                <span class="tech-stack__item">CSS Modules</span>
+                <span class="tech-stack__item">TypeScript</span>
+                <span class="tech-stack__item">Tailwind</span>
+                <span class="tech-stack__item">Redux Toolkit</span>
+                <span class="tech-stack__item">React Router</span>
+                <span class="tech-stack__item">Jest</span>
+                <span class="tech-stack__item">Cypress</span>
+                <span class="tech-stack__item">Webpack</span>
+              </div>
+              <p class="project__repo-block">
+                <span class="project__repo-label">Репозиторий:</span>
+                <a
+                  href="https://github.com/IrinaRyazanskaya/stellar-burgers"
+                  target="_blank"
+                  class="link"
+                >
+                  github.com/IrinaRyazanskaya/stellar-burgers
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job__header">
+              <div class="job__info">
+                <h3 class="job__title">Менеджер по проектам</h3>
+                <p class="job__company">Индастри</p>
+              </div>
+              <div class="job__period">
+                Ноябрь 2019 — Июнь 2020<br />
+                <span class="job__duration">8 месяцев</span>
+              </div>
+            </div>
+            <ul class="job__list">
+              <li class="job__list-item">
+                Успешно завершила более 10 проектов различной сложности, включая капитальный ремонт
+                зданий и помещений под аренду
+              </li>
+              <li class="job__list-item">
+                Все объекты были сданы в срок и соответствовали требованиям заказчика
+              </li>
+              <li class="job__list-item">
+                Оптимизировала работу команды: внедрила регулярную отчётность и контрольные точки по
+                каждому проекту
+              </li>
+              <li class="job__list-item">
+                Сократила время простоев на объектах за счёт оперативного решения проблем и
+                ежедневного контроля хода работ
+              </li>
+              <li class="job__list-item">
+                Вела до 3 проектов параллельно, эффективно управляя сроками, бюджетами и командой
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section">
+          <h2 class="section__title">🛠️ Навыки</h2>
+          <div class="skills">
+            <span class="skills__item">JavaScript</span>
+            <span class="skills__item">TypeScript</span>
+            <span class="skills__item">HTML</span>
+            <span class="skills__item">CSS3</span>
+            <span class="skills__item">React</span>
+            <span class="skills__item">Redux</span>
+            <span class="skills__item">Webpack</span>
+            <span class="skills__item">Git</span>
+            <span class="skills__item">Figma</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__title">🎓 Образование</h2>
+          <article class="education">
+            <p class="education__year">2019</p>
+            <h3 class="education__title">
+              Уральский федеральный университет имени первого Президента России Б.Н. Ельцина
+            </h3>
+            <p class="education__department">Институт фундаментального образования</p>
+            <p class="education__specialty">
+              <span class="education__specialty-label">Специальность:</span> Пожарная безопасность
+            </p>
+            <p class="education__location">Екатеринбург</p>
+          </article>
+
+          <h3 class="education__subtitle">Повышение квалификации</h3>
+          <article class="education">
+            <p class="education__year">2025</p>
+            <h3 class="education__title">Фронтенд-разработчик</h3>
+            <p class="education__department">Яндекс Практикум</p>
+          </article>
+        </section>
+
+        <section class="section">
+          <h2 class="section__title">🌍 Языки</h2>
+          <div class="info-grid">
+            <div class="info-grid__item">
+              <strong class="info-grid__label">Русский</strong>
+              <p>Родной</p>
+            </div>
+            <div class="info-grid__item">
+              <strong class="info-grid__label">Английский</strong>
+              <p>B1 — Средний</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__title">📋 Дополнительная информация</h2>
+          <div class="info-grid">
+            <div class="info-grid__item">
+              <strong class="info-grid__label">Проживание:</strong>
+              <p>Миасс</p>
+            </div>
+            <div class="info-grid__item">
+              <strong class="info-grid__label">Гражданство:</strong>
+              <p>Россия</p>
+            </div>
+            <div class="info-grid__item">
+              <strong class="info-grid__label">Занятость:</strong>
+              <p>Полная занятость, частичная занятость</p>
+            </div>
+            <div class="info-grid__item">
+              <strong class="info-grid__label">График работы:</strong>
+              <p>Удаленная работа</p>
+            </div>
+            <div class="info-grid__item">
+              <strong class="info-grid__label">Переезд:</strong>
+              <p>Не готова к переезду</p>
+            </div>
+            <div class="info-grid__item">
+              <strong class="info-grid__label">Командировки:</strong>
+              <p>Не готова к командировкам</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer__text">Резюме обновлено 14 июля 2025 в 22:07</p>
+      </footer>
+    </div>
+  </body>
+</html>
