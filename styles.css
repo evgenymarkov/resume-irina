@@ -46,14 +46,17 @@ body {
 
 .contact__link {
   display: inline-block;
+  transition: border-color 0.2s ease;
   margin-top: 5px;
   margin-right: 15px;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
   color: white;
   text-decoration: none;
 }
 
 .contact__link:hover {
-  text-decoration: underline;
+  border-bottom-color: white;
 }
 
 .main {
