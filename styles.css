@@ -1,0 +1,327 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  font-family: system-ui, sans-serif;
+}
+
+.page {
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  max-width: 900px;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px;
+  color: white;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__title {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.header__subtitle {
+  opacity: 0.95;
+  font-size: 1.1rem;
+}
+
+.contact {
+  margin-top: 15px;
+}
+
+.contact__link {
+  display: inline-block;
+  margin-top: 5px;
+  margin-right: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.contact__link:hover {
+  text-decoration: underline;
+}
+
+.tech-skills {
+  border-bottom: 4px solid #667eea;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 30px 40px;
+}
+
+.tech-skills__content {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.tech-skills__title {
+  margin-bottom: 20px;
+  color: #667eea;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.tech-skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.tech-skills__category {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+  padding: 15px;
+}
+
+.tech-skills__category-title {
+  margin-bottom: 8px;
+  color: #764ba2;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.tech-skills__category-text {
+  color: #333;
+  line-height: 1.5;
+}
+
+.main {
+  padding: 40px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section__title {
+  margin-bottom: 20px;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 10px;
+  color: #667eea;
+  font-size: 1.8rem;
+}
+
+.section__text {
+  margin-bottom: 15px;
+}
+
+.job {
+  margin-bottom: 30px;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.job__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.job__info {
+  flex: 1;
+}
+
+.job__title {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.job__company {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.job__period {
+  color: #666;
+  font-style: italic;
+  text-align: right;
+}
+
+.job__duration {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.job__list {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.job__list-item {
+  margin-bottom: 8px;
+}
+
+.project {
+  margin-bottom: 25px;
+  padding-left: 15px;
+}
+
+.project__title {
+  margin-bottom: 8px;
+  color: #764ba2;
+  font-size: 1.1rem;
+}
+
+.project__tasks-label {
+  font-weight: bold;
+}
+
+.project__list {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.project__list-item {
+  margin-bottom: 8px;
+}
+
+.project__repo-label {
+  font-weight: bold;
+}
+
+.project__repo-block {
+  margin-top: 10px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tech-stack__item {
+  border-radius: 15px;
+  background-color: #667eea;
+  padding: 5px 12px;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.info-grid__item {
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 15px;
+}
+
+.info-grid__label {
+  display: block;
+  margin-bottom: 5px;
+  color: #667eea;
+}
+
+.education {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 15px;
+}
+
+.education__year {
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.education__title {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.education__department {
+  margin-bottom: 5px;
+}
+
+.education__specialty {
+  margin-bottom: 5px;
+}
+
+.education__specialty-label {
+  font-weight: bold;
+}
+
+.education__location {
+  font-style: italic;
+}
+
+.education__subtitle {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.link {
+  color: #667eea;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .header__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header__title {
+    font-size: 2rem;
+  }
+
+  .tech-skills {
+    padding: 20px;
+  }
+
+  .tech-skills__title {
+    font-size: 1.3rem;
+  }
+
+  .tech-skills__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .job__header {
+    flex-direction: column;
+  }
+
+  .job__period {
+    margin-top: 5px;
+    text-align: left;
+  }
+}

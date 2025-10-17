@@ -4,319 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Рязанская Ирина - Frontend-разработчик</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background-color: #f5f5f5;
-      }
-
-      /* page */
-      .page {
-        max-width: 900px;
-        margin: 0 auto;
-        background-color: #fff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      }
-
-      /* header */
-      .header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 40px;
-      }
-
-      .header__content {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-      }
-
-      .header__title {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-      }
-
-      .header__subtitle {
-        font-size: 1.1em;
-        opacity: 0.95;
-      }
-
-      .header__info-text {
-        font-size: 1.1em;
-        opacity: 0.95;
-      }
-
-      /* contact */
-      .contact {
-        margin-top: 15px;
-      }
-
-      .contact__link {
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-        margin-right: 15px;
-        margin-top: 5px;
-      }
-
-      .contact__link:hover {
-        text-decoration: underline;
-      }
-
-      /* main */
-      .main {
-        padding: 40px;
-      }
-
-      /* section */
-      .section {
-        margin-bottom: 40px;
-      }
-
-      .section__title {
-        color: #667eea;
-        font-size: 1.8em;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 3px solid #667eea;
-      }
-
-      .section__text {
-        margin-bottom: 15px;
-      }
-
-      /* job */
-      .job {
-        margin-bottom: 30px;
-        padding: 20px;
-        background-color: #f9f9f9;
-        border-left: 4px solid #667eea;
-        border-radius: 4px;
-      }
-
-      .job__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 15px;
-        flex-wrap: wrap;
-      }
-
-      .job__info {
-        flex: 1;
-      }
-
-      .job__title {
-        color: #333;
-        font-size: 1.3em;
-        margin-bottom: 10px;
-      }
-
-      .job__company {
-        color: #666;
-        font-size: 1.1em;
-        margin-bottom: 10px;
-      }
-
-      .job__period {
-        color: #666;
-        font-style: italic;
-        text-align: right;
-      }
-
-      .job__duration {
-        font-weight: bold;
-        font-style: normal;
-      }
-
-      .job__list {
-        margin-left: 20px;
-        margin-top: 10px;
-      }
-
-      .job__list-item {
-        margin-bottom: 8px;
-      }
-
-      /* project */
-      .project {
-        margin-bottom: 25px;
-        padding-left: 15px;
-      }
-
-      .project__title {
-        color: #764ba2;
-        margin-bottom: 8px;
-        font-size: 1.1em;
-      }
-
-      .project__tasks-label {
-        font-weight: bold;
-      }
-
-      .project__list {
-        margin-left: 20px;
-        margin-top: 10px;
-      }
-
-      .project__list-item {
-        margin-bottom: 8px;
-      }
-
-      .project__repo-label {
-        font-weight: bold;
-      }
-
-      .project__repo-block {
-        margin-top: 10px;
-      }
-
-      /* tech-stack */
-      .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 10px;
-      }
-
-      .tech-stack__item {
-        background-color: #667eea;
-        color: white;
-        padding: 5px 12px;
-        border-radius: 15px;
-        font-size: 0.85em;
-      }
-
-      /* skills */
-      .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .skills__item {
-        background-color: #e8eaf6;
-        color: #667eea;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-weight: 600;
-      }
-
-      /* info-grid */
-      .info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-      }
-
-      .info-grid__item {
-        padding: 15px;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-      }
-
-      .info-grid__label {
-        color: #667eea;
-        display: block;
-        margin-bottom: 5px;
-      }
-
-      /* education */
-      .education {
-        padding: 15px;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        margin-bottom: 15px;
-      }
-
-      .education__year {
-        color: #667eea;
-        font-weight: bold;
-        font-size: 1.1em;
-      }
-
-      .education__title {
-        color: #333;
-        font-size: 1.3em;
-        margin-bottom: 10px;
-      }
-
-      .education__department {
-        margin-bottom: 5px;
-      }
-
-      .education__specialty {
-        margin-bottom: 5px;
-      }
-
-      .education__specialty-label {
-        font-weight: bold;
-      }
-
-      .education__location {
-        font-style: italic;
-      }
-
-      .education__subtitle {
-        margin-top: 30px;
-        margin-bottom: 15px;
-        color: #333;
-        font-size: 1.3em;
-      }
-
-      /* link */
-      .link {
-        color: #667eea;
-        text-decoration: none;
-        word-break: break-all;
-      }
-
-      .link:hover {
-        text-decoration: underline;
-      }
-
-      /* footer */
-      .footer {
-        background-color: #f0f0f0;
-        padding: 20px 40px;
-        text-align: center;
-        color: #666;
-        font-size: 0.9em;
-      }
-
-      /* responsive */
-      @media (max-width: 768px) {
-        .header__content {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .header__title {
-          font-size: 2em;
-        }
-
-        .main {
-          padding: 20px;
-        }
-
-        .job__header {
-          flex-direction: column;
-        }
-
-        .job__period {
-          text-align: left;
-          margin-top: 5px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="page">
@@ -325,7 +13,6 @@
           <div class="header__info">
             <h1 class="header__title">Рязанская Ирина</h1>
             <p class="header__subtitle">Frontend-разработчик</p>
-            <p class="header__info-text">Женщина, 29 лет, родилась 26 мая 1996</p>
             <div class="contact">
               <a href="tel:+79122790368" class="contact__link">📞 +7 (912) 279-03-68</a>
               <a href="https://t.me/IrinaRyazanskaya" target="_blank" class="contact__link"
@@ -341,6 +28,38 @@
           </div>
         </div>
       </header>
+
+      <section class="tech-skills">
+        <div class="tech-skills__content">
+          <h2 class="tech-skills__title">ТЕХНИЧЕСКИЕ НАВЫКИ</h2>
+          <div class="tech-skills__grid">
+            <div class="tech-skills__category">
+              <h3 class="tech-skills__category-title">Языки:</h3>
+              <p class="tech-skills__category-text">TypeScript, JavaScript, HTML, CSS</p>
+            </div>
+            <div class="tech-skills__category">
+              <h3 class="tech-skills__category-title">Фреймворки и библиотеки:</h3>
+              <p class="tech-skills__category-text">React, Redux, Next.js</p>
+            </div>
+            <div class="tech-skills__category">
+              <h3 class="tech-skills__category-title">Стилизация:</h3>
+              <p class="tech-skills__category-text">BEM, CSS Modules, адаптивная вёрстка</p>
+            </div>
+            <div class="tech-skills__category">
+              <h3 class="tech-skills__category-title">Инструменты разработки:</h3>
+              <p class="tech-skills__category-text">Git, GitHub, NPM, Webpack, Vite</p>
+            </div>
+            <div class="tech-skills__category">
+              <h3 class="tech-skills__category-title">Тестирование:</h3>
+              <p class="tech-skills__category-text">Jest, Cypress</p>
+            </div>
+            <div class="tech-skills__category">
+              <h3 class="tech-skills__category-title">Дополнительные инструменты:</h3>
+              <p class="tech-skills__category-text">ChatGPT, Perplexity, Figma, Postman / Bruno</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <main class="main">
         <section class="section">
@@ -518,21 +237,6 @@
         </section>
 
         <section class="section">
-          <h2 class="section__title">🛠️ Навыки</h2>
-          <div class="skills">
-            <span class="skills__item">JavaScript</span>
-            <span class="skills__item">TypeScript</span>
-            <span class="skills__item">HTML</span>
-            <span class="skills__item">CSS3</span>
-            <span class="skills__item">React</span>
-            <span class="skills__item">Redux</span>
-            <span class="skills__item">Webpack</span>
-            <span class="skills__item">Git</span>
-            <span class="skills__item">Figma</span>
-          </div>
-        </section>
-
-        <section class="section">
           <h2 class="section__title">🎓 Образование</h2>
           <article class="education">
             <p class="education__year">2019</p>
@@ -573,7 +277,7 @@
           <div class="info-grid">
             <div class="info-grid__item">
               <strong class="info-grid__label">Проживание:</strong>
-              <p>Миасс</p>
+              <p>Челябинская область, Миасс</p>
             </div>
             <div class="info-grid__item">
               <strong class="info-grid__label">Гражданство:</strong>
@@ -598,10 +302,6 @@
           </div>
         </section>
       </main>
-
-      <footer class="footer">
-        <p class="footer__text">Резюме обновлено 14 июля 2025 в 22:07</p>
-      </footer>
     </div>
   </body>
 </html>
